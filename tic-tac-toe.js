@@ -31,7 +31,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         })
+
+        
+        game_cells[i].addEventListener("mouseover", () => {
+            if(!game_cells[i].innerHTML){
+                game_cells[i].classList.add("hover")
+            }
+            
+        })
+
+        game_cells[i].addEventListener("mouseout", () => {
+            game_cells[i].classList.remove("hover")
+        })
+
+
     }
+
+
+    
 
 
 
