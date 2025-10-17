@@ -12,9 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let player = "X";
 
-    const game = new Array(9);
+    let game = new Array(9);
     const status = document.getElementById("status")
     let gameOver = false;
+    const gameBtn = document.querySelector(".btn")
+
 
     const winConditions = [
         [0,1,2],
@@ -73,13 +75,22 @@ document.addEventListener("DOMContentLoaded", () => {
             game_cells[i].classList.remove("hover")
         })
 
-
     }
 
+    gameBtn.addEventListener("click", () => {
+        for (let i = 0; i < game_cells.length; i++){
+                game_cells[i].textContent = "";
+                game_cells[i].classList.remove("X", "O", "hover")
+            }
 
+        game = new Array(9);
+        gameOver = false;
+        player = "X";
+
+        status.innerHTML = "Move your mouse over a square and click to play an X or an O.";
+        status.classList.remove("you-won");
+    })
     
-
-
 
 })
 
